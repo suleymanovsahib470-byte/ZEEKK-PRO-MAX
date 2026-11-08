@@ -1,27 +1,30 @@
--- ZEEKK PRO MAX | Roblox Studio Loader
--- Bunu StarterPlayer > StarterPlayerScripts altina LocalScript olarak ekle.
--- ReplicatedStorage icindeki ModuleScript'in adi ZeekkProMax olmalidir.
+
+-- ZEEKK PRO MAX | Loader
+-- Roblox Studio LocalScript
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
 local moduleScript = ReplicatedStorage:WaitForChild("ZeekkProMax", 15)
 
 if not moduleScript or not moduleScript:IsA("ModuleScript") then
-    warn("[ZEEKK PRO MAX] ReplicatedStorage icinde ZeekkProMax ModuleScript bulunamadi.")
+    warn("[ZEEKK PRO MAX] ModuleScript bulunamadi!")
     return
 end
 
 local success, startPanel = pcall(require, moduleScript)
+
 if not success then
-    warn("[ZEEKK PRO MAX] Modul yuklenemedi: " .. tostring(startPanel))
+    warn("[ZEEKK PRO MAX] Yukleme hatasi: " .. tostring(startPanel))
     return
 end
 
 if type(startPanel) ~= "function" then
-    warn("[ZEEKK PRO MAX] Modul beklenen baslatma fonksiyonunu dondurmedi.")
+    warn("[ZEEKK PRO MAX] Baslatma fonksiyonu bulunamadi!")
     return
 end
 
 local started, err = pcall(startPanel)
+
 if not started then
-    warn("[ZEEKK PRO MAX] Panel baslatilamadi: " .. tostring(err))
+    warn("[ZEEKK PRO MAX] Baslatma hatasi: " .. tostring(err))
 end
