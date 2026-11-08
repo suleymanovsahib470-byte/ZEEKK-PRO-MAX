@@ -1,0 +1,19 @@
+ZEEKK PRO MAX - Roblox Studio Loader paketi
+
+KURULUM
+1. Roblox Studio'da oyununuzu/projenizi acin.
+2. ReplicatedStorage altina bir ModuleScript ekleyin ve adini ZeekkProMax yapin.
+3. ZeekkProMax.lua dosyasinin icerigini bu ModuleScript'e yapistirin.
+4. StarterPlayer > StarterPlayerScripts altina bir LocalScript ekleyin.
+5. Loader.lua dosyasinin icerigini LocalScript'e yapistirin.
+6. Play ile test edin.
+
+NOT
+Bu paket, yuklenen dosyadaki yerel takip panelini calistirir. Antrenman/sure/sayac/not
+arayuzudur; Muscle Legends sunucusuna komut gondermez, oyunculari hedef almaz,
+auto-kill veya diger hile/istismar ozellikleri icermez.
+
+loadstring(game:HttpGet(...)) tarzi harici executor yukleyicisi yerine Roblox Studio'nun
+destekledigi ModuleScript + require yontemi kullanilmistir. Roblox istemcisinde
+HttpGet/loadstring her ortamda desteklenmez ve bu yontem guvenli/kararli bir dagitim
+yolu degildir.
